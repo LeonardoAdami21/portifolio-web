@@ -1,23 +1,31 @@
 import React from "react";
 import "./Projects.css";
 import { Carousel, Col, Container, Nav, Row, Tab } from "react-bootstrap";
+import projectImg1 from "../assets/img/project-img1.png";
+import projectImg2 from "../assets/img/project-img2.png";
+import projectImg3 from "../assets/img/project-img3.png";
+import colorSharp from "../assets/img/color-sharp2.png";
+import { ProjectCard } from "./ProjectCard";
 
 export const Projects = () => {
   const myProjects = [
     {
       title: "Task Manager Api",
       description: "API for task manager",
-      link: "https://github.com/LeonardoAdami/task-manager-api",
+      link: "https://github.com/LeonardoAdami21/task-manager-api",
+      imgUrl: projectImg1,
     },
     {
       title: "Personal Portfolio",
       description: "My personal portfolio",
       link: "https://task-manager-web-gilt.vercel.app/",
+      imgUrl: projectImg2,
     },
     {
       title: "Task Manager",
       description: "Task manager web app",
-      link: "https://github.com/LeonardoAdami/task-manager-web",
+      link: "https://github.com/LeonardoAdami21/task-manager-web",
+      imgUrl: projectImg3,
     },
   ];
   return (
@@ -47,15 +55,7 @@ export const Projects = () => {
                   <Row>
                     {myProjects.map((project, index) => {
                       return (
-                        <Col key={index} sm={6}>
-                          <div className="proj-imgbx">
-                            <img src={project.link} alt="Image" />
-                            <div className="proj-txtx">
-                              <h4>{project.title}</h4>
-                              <span>{project.description}</span>
-                            </div>
-                          </div>
-                        </Col>
+                        <ProjectCard key={index} {...project} index={index} />
                       );
                     })}
                   </Row>
@@ -67,6 +67,7 @@ export const Projects = () => {
           </Col>
         </Row>
       </Container>
+      <img className="background-image-right" src={colorSharp} alt="img" />
     </section>
   );
 };
