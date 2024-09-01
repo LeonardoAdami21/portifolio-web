@@ -18,13 +18,13 @@ export const Projects = () => {
     {
       title: "Personal Portfolio",
       description: "My personal portfolio",
-      link: "https://task-manager-web-gilt.vercel.app/",
+      link: "https://portifolio-web-gilt.vercel.app/",
       imgUrl: projectImg2,
     },
     {
       title: "Task Manager",
       description: "Task manager web app",
-      link: "https://github.com/LeonardoAdami21/task-manager-web",
+      link: "https://task-manager-web-gilt.vercel.app/",
       imgUrl: projectImg3,
     },
   ];
@@ -39,7 +39,11 @@ export const Projects = () => {
               languages.
             </p>
             <Tab.Container id="projects-tabs" defaultActiveKey="first">
-              <Nav variant="pills" defaultActiveKey="/home">
+              <Nav
+                variant="pills"
+                className="nav-pills mb-5 justify-content-center align-items-center"
+                id="pills-tab"
+              >
                 <Nav.Item>
                   <Nav.Link eventKey="first">Tab 1</Nav.Link>
                 </Nav.Item>
@@ -60,8 +64,8 @@ export const Projects = () => {
                     })}
                   </Row>
                 </Tab.Pane>
-                <Tab.Pane eventKey="second"></Tab.Pane>
-                <Tab.Pane eventKey="third"></Tab.Pane>
+                <Tab.Pane eventKey="second">Tab 2</Tab.Pane>
+                <Tab.Pane eventKey="third">Tab 3</Tab.Pane>
               </Tab.Content>
             </Tab.Container>
           </Col>
